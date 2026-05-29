@@ -3,16 +3,16 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: '--font-inter'
 });
 
 export const metadata: Metadata = {
-  title: 'WENZE Power | Reliable Power Transformer Manufacturer',
-  description: 'WENZE Power - Professional power transformer manufacturer. Specialized in oil-immersed transformers, dry-type transformers, and distribution transformers. Serving Southeast Asia, Middle East, Russia and Africa with custom designs for local grid standards.',
+  metadataBase: new URL('https://www.wenze-global.com'),
+  title: 'WENZE Power | Reliable Power Transformer Manufacturer & Exporter',
+  description: 'Professional power transformer manufacturer serving Southeast Asia, Middle East, Russia and Africa with custom designs for local grid standards.',
   keywords: 'WENZE Power, power transformer manufacturer, transformer supplier China, Southeast Asia transformer, Middle East transformer, Russia transformer, oil immersed transformer, distribution transformer, custom transformer',
-  generator: 'v0.app',
   icons: {
     icon: [
       {
@@ -31,9 +31,57 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'WENZE Power | Reliable Power Transformer Manufacturer',
-    description: 'Professional power transformer manufacturer serving global markets with custom designs for local grid standards.',
+    title: 'WENZE Power | Reliable Power Transformer Manufacturer & Exporter',
+    description: 'Professional power transformer manufacturer serving Southeast Asia, Middle East, Russia and Africa.',
     type: 'website',
+    url: 'https://www.wenze-global.com',
+    siteName: 'WENZE Power',
+    images: [
+      {
+        url: '/api/og',
+        width: 1200,
+        height: 630,
+        alt: 'WENZE Power - Transformer Manufacturer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WENZE Power | Reliable Power Transformer Manufacturer',
+    description: 'Professional power transformer manufacturer serving Southeast Asia, Middle East, Russia and Africa.',
+    images: ['/api/og'],
+  },
+  alternates: {
+    canonical: 'https://www.wenze-global.com',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+}
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'WENZE Power',
+  url: 'https://www.wenze-global.com',
+  logo: 'https://www.wenze-global.com/placeholder-logo.svg',
+  description: 'Professional power transformer manufacturer serving global markets with custom designs for local grid standards.',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+86-159-0534-2475',
+    contactType: 'Sales',
+    email: 'sales@wenze-global.com',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'CN',
+    addressRegion: 'Shandong',
+    streetAddress: 'Shandong, China',
   },
 }
 
@@ -45,6 +93,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background">
       <body className={`${inter.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
