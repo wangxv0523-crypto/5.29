@@ -26,7 +26,7 @@ export function Products() {
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
             Comprehensive range of power transformers designed for diverse industrial and utility applications.
-            All products comply with international standards including IEC, ANSI, and regional grid codes.
+            All products comply with international standards including IEC and ANSI.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export function Products() {
 
                   <div className="rounded-lg border border-border overflow-hidden">
                     <div className="bg-primary px-4 py-2.5">
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Technical Specifications</h4>
+                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Specifications</h4>
                     </div>
                     <div className="divide-y divide-border">
                       <div className="flex items-center px-4 py-2.5 bg-white">
@@ -67,28 +67,13 @@ export function Products() {
                         <span className="text-sm font-semibold text-foreground">{product.specs.capacity}</span>
                       </div>
                       <div className="flex items-center px-4 py-2.5 bg-white">
-                        <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider w-28 shrink-0">Frequency</span>
-                        <span className="text-sm font-semibold text-foreground">{product.specs.frequency}</span>
-                      </div>
-                      <div className="flex items-center px-4 py-2.5 bg-secondary/30">
                         <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider w-28 shrink-0">Cooling</span>
                         <span className="text-sm font-semibold text-foreground">{product.specs.cooling}</span>
                       </div>
-                      <div className="flex items-center px-4 py-2.5 bg-white">
+                      <div className="flex items-center px-4 py-2.5 bg-secondary/30">
                         <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider w-28 shrink-0">Standards</span>
                         <span className="text-sm font-semibold text-foreground">{product.specs.standards}</span>
                       </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Applications</h4>
-                    <div className="flex flex-wrap gap-1.5">
-                      {product.applications.slice(0, 4).map((app) => (
-                        <span key={app} className="text-xs px-2 py-1 rounded bg-primary/5 text-primary border border-primary/10">
-                          {app}
-                        </span>
-                      ))}
                     </div>
                   </div>
 
@@ -119,11 +104,11 @@ export function Products() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  Compliance with local grid standards (TNB, PLN, DEWA, GOST, etc.)
+                  Compliance with local grid standards
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  Special environmental adaptations (high altitude, extreme temperatures)
+                  Special environmental adaptations
                 </li>
               </ul>
             </div>

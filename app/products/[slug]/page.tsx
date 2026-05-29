@@ -2,52 +2,19 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { getProductBySlug, products } from '@/lib/products-data'
-import { ArrowLeft, ArrowRight, MessageCircle, Mail, Factory, Building2, Sun, Pickaxe, Zap, Fuel } from 'lucide-react'
+import { ArrowLeft, ArrowRight, MessageCircle, Mail } from 'lucide-react'
 
-// WhatsApp预设消息
 const getWhatsAppMessage = (productName: string) => encodeURIComponent(
 `Hello, I'm interested in your ${productName}.
 
 Please provide a quote for:
-1. Voltage (kV): 
-2. Capacity (kVA): 
-3. Quantity: 
-4. Country/Project Location: 
+1. Voltage (kV):
+2. Capacity (kVA):
+3. Quantity:
+4. Country/Project Location:
 
 Thank you.`
 )
-
-const applicationIcons: Record<string, React.ElementType> = {
-  'Industrial Plants': Factory,
-  'Power Distribution Networks': Zap,
-  'Mining Operations': Pickaxe,
-  'Substations': Zap,
-  'Commercial Buildings': Building2,
-  'Hospitals': Building2,
-  'Data Centers': Building2,
-  'Shopping Malls': Building2,
-  'Underground Facilities': Building2,
-  'Residential Areas': Building2,
-  'Commercial Developments': Building2,
-  'Urban Distribution': Zap,
-  'Underground Systems': Zap,
-  'Solar Projects': Sun,
-  'Solar Farms': Sun,
-  'Solar Energy Projects': Sun,
-  'Industrial Facilities': Factory,
-  'Commercial Centers': Building2,
-  'Residential Projects': Building2,
-  'Infrastructure Projects': Building2,
-  'Utility Networks': Zap,
-  'Power Distribution': Zap,
-  'Renewable Energy': Sun,
-  'Utility Power Grid': Zap,
-  'Industrial Power Systems': Factory,
-  'Renewable Energy Projects': Sun,
-  'Large Infrastructure': Building2,
-  'Power Transmission': Zap,
-  'Smart Grid Systems': Zap,
-}
 
 export function generateStaticParams() {
   return products.map((product) => ({
@@ -58,16 +25,16 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const product = getProductBySlug(params.slug)
   if (!product) return { title: 'Product Not Found' }
-  
+
   return {
-    title: `${product.title} | WENZE Power`,
+    title: `${product.title} | Power Transformers`,
     description: product.fullDescription,
   }
 }
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const product = getProductBySlug(params.slug)
-  
+
   if (!product) {
     notFound()
   }
@@ -77,7 +44,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Breadcrumb */}
       <div className="bg-primary/5 border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center gap-2 text-sm">
@@ -90,24 +56,20 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      {/* Product Hero Section */}
       <section className="py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left: Product Image */}
             <div className="relative">
               <div className="aspect-[4/3] rounded-xl overflow-hidden bg-secondary">
-                <img 
-                  src={product.image} 
+                <img
+                  src={product.image}
                   alt={product.title}
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
 
-            {/* Right: Product Info */}
             <div className="space-y-6">
-              {/* Title */}
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -118,12 +80,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 <h1 className="text-3xl md:text-4xl font-bold text-primary">{product.title}</h1>
               </div>
 
-              {/* Description */}
               <p className="text-muted-foreground leading-relaxed text-lg">
                 {product.fullDescription}
               </p>
 
-              {/* Technical Specifications */}
               <div className="rounded-xl border border-border overflow-hidden">
                 <div className="bg-primary px-6 py-3">
                   <h2 className="text-sm font-bold text-white uppercase tracking-wider">Technical Specifications</h2>
@@ -152,7 +112,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 </div>
               </div>
 
-              {/* Key Features */}
               <div>
                 <h3 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">Key Features</h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -165,7 +124,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 </ul>
               </div>
 
-              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-12 px-6">
                   <a href={`https://wa.me/8615905342475?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
@@ -185,51 +143,43 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* Standard Sizes Section */}
-      <section className="py-16 bg-white border-t border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-primary text-center mb-10">Standard Sizes</h2>
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-secondary/30 rounded-xl p-8 mb-6">
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Common capacities include:
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                {product.standardSizes?.map((size) => (
-                  <div key={size} className="flex items-center justify-center px-4 py-3 rounded-lg bg-white border border-primary/20 font-semibold text-primary">
-                    {size}
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground mt-6">
-                Custom sizes and specifications are available based on project requirements and local grid standards.
-              </p>
+      {product.specTable && product.specTable.length > 0 && (
+        <section className="py-16 bg-white border-t border-border">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-primary mb-8">Standard Sizes & Specifications</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-primary">
+                    <th className="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Capacity</th>
+                    <th className="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Voltage</th>
+                    <th className="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Dimensions</th>
+                    {product.specTable[0]?.weight && (
+                      <th className="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Weight</th>
+                    )}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {product.specTable.map((row, idx) => (
+                    <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-secondary/30'}>
+                      <td className="px-6 py-4 text-sm font-semibold text-foreground">{row.capacity}</td>
+                      <td className="px-6 py-4 text-sm text-foreground">{row.voltage}</td>
+                      <td className="px-6 py-4 text-sm text-foreground">{row.dimensions}</td>
+                      {row.weight && (
+                        <td className="px-6 py-4 text-sm text-foreground">{row.weight}</td>
+                      )}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+            <p className="text-sm text-muted-foreground mt-6">
+              Custom sizes and specifications are available based on project requirements and local grid standards.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* Applications Section */}
-      <section className="py-16 bg-background border-t border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-primary text-center mb-10">Applications</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {product.applications.map((app) => {
-              const AppIcon = applicationIcons[app] || Building2
-              return (
-                <div key={app} className="flex flex-col items-center text-center p-4 rounded-xl bg-secondary/30 hover:bg-secondary/50 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-                    <AppIcon className="w-6 h-6 text-primary" />
-                  </div>
-                  <span className="text-sm font-medium text-foreground">{app}</span>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Request Quote Section */}
       <section className="py-16 bg-primary">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
@@ -255,7 +205,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* Back to Products */}
       <section className="py-8 bg-secondary/30 border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">

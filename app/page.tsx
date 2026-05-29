@@ -3,7 +3,6 @@ import { Hero } from '@/components/hero'
 import { Products } from '@/components/products'
 import { Capabilities } from '@/components/capabilities'
 import { RegionalAdaptation } from '@/components/regional-adaptation'
-import { Applications } from '@/components/applications'
 import { ExportMarkets } from '@/components/export-markets'
 import { Factory } from '@/components/factory'
 import { TrustStatement } from '@/components/trust-statement'
@@ -19,7 +18,6 @@ export default function Page() {
         <Hero />
         <Products />
         <Capabilities />
-        <Applications />
         <ExportMarkets />
         <RegionalAdaptation />
         <Factory />
