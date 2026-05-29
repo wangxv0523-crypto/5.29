@@ -33,10 +33,20 @@ const applicationIcons: Record<string, React.ElementType> = {
   'Underground Systems': Zap,
   'Solar Projects': Sun,
   'Solar Farms': Sun,
+  'Solar Energy Projects': Sun,
   'Industrial Facilities': Factory,
   'Commercial Centers': Building2,
   'Residential Projects': Building2,
   'Infrastructure Projects': Building2,
+  'Utility Networks': Zap,
+  'Power Distribution': Zap,
+  'Renewable Energy': Sun,
+  'Utility Power Grid': Zap,
+  'Industrial Power Systems': Factory,
+  'Renewable Energy Projects': Sun,
+  'Large Infrastructure': Building2,
+  'Power Transmission': Zap,
+  'Smart Grid Systems': Zap,
 }
 
 export function generateStaticParams() {
@@ -175,8 +185,32 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* Applications Section */}
+      {/* Standard Sizes Section */}
       <section className="py-16 bg-white border-t border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-primary text-center mb-10">Standard Sizes</h2>
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-secondary/30 rounded-xl p-8 mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Common capacities include:
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                {product.standardSizes?.map((size) => (
+                  <div key={size} className="flex items-center justify-center px-4 py-3 rounded-lg bg-white border border-primary/20 font-semibold text-primary">
+                    {size}
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground mt-6">
+                Custom sizes and specifications are available based on project requirements and local grid standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications Section */}
+      <section className="py-16 bg-background border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-primary text-center mb-10">Applications</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
