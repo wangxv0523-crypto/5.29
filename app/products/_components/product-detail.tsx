@@ -1,8 +1,32 @@
+'use client'
+
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import { getProductBySlug, products } from '@/lib/products-data'
-import { ArrowLeft, ArrowRight, MessageCircle, Mail } from 'lucide-react'
+import { ArrowLeft, ArrowRight, MessageCircle, Mail, Droplets, Wind, Zap, Box } from 'lucide-react'
+
+interface ProductData {
+  id: string
+  iconName: 'droplets' | 'wind' | 'zap' | 'box'
+  title: string
+  shortDescription: string
+  fullDescription: string
+  standardSizes: string[]
+  image: string
+  specs: {
+    voltage: string
+    capacity: string
+    frequency: string
+    cooling: string
+    standards: string
+  }
+  features: string[]
+  specTable?: Array<{
+    capacity: string
+    voltage: string
+    dimensions: string
+    weight?: string
+  }>
+}
 
 const getWhatsAppMessage = (productName: string) => encodeURIComponent(
 `Hello, I'm interested in your ${productName}.
@@ -16,30 +40,15 @@ Please provide a quote for:
 Thank you.`
 )
 
-export function generateStaticParams() {
-  return products.map((product) => ({
-    slug: product.id,
-  }))
+const iconMap = {
+  droplets: Droplets,
+  wind: Wind,
+  zap: Zap,
+  box: Box,
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const product = getProductBySlug(params.slug)
-  if (!product) return { title: 'Product Not Found' }
-
-  return {
-    title: `${product.title} | Power Transformers`,
-    description: product.fullDescription,
-  }
-}
-
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = getProductBySlug(params.slug)
-
-  if (!product) {
-    notFound()
-  }
-
-  const Icon = product.icon
+export function ProductDetail({ product }: { product: ProductData }) {
+  const Icon = iconMap[product.iconName]
   const whatsappMessage = getWhatsAppMessage(product.title)
 
   return (
