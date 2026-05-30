@@ -4,8 +4,9 @@ import { Button } from '@/components/ui/button'
 
 const navigation = {
   products: [
-    { name: 'Oil-Immersed Transformers', href: '/products/oil-immersed-transformer' },
-    { name: 'Dry-Type Transformers', href: '/products/dry-type-transformer' },
+    { name: 'Oil Immersed Transformers', href: '/products/oil-immersed-transformer' },
+    { name: 'Dry Type Transformers', href: '/products/dry-type-transformer' },
+    { name: 'High Voltage Power Transformers', href: '/products/high-voltage-power-transformer' },
     { name: 'Distribution Transformers', href: '/products/distribution-transformer' },
     { name: 'Pole Mounted Transformers', href: '/products/pole-mounted-transformer' },
     { name: 'Renewable Energy Transformers', href: '/products/renewable-energy-transformer' },

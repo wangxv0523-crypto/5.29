@@ -118,7 +118,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: 'high-voltage-transformer',
+    id: 'high-voltage-power-transformer',
     icon: Zap,
     title: 'High Voltage Power Transformers',
     shortDescription: 'Heavy-duty transformers for utility grids and large industrial power systems up to 220kV.',
