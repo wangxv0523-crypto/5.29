@@ -1,4 +1,4 @@
-import { MapPin, CheckCircle2 } from 'lucide-react'
+import { MapPin, CircleCheck as CheckCircle2 } from 'lucide-react'
 
 const regions = [
   {
@@ -19,7 +19,7 @@ const regions = [
   {
     region: 'Africa',
     countries: ['Nigeria', 'Kenya', 'Tanzania', 'Ghana', 'South Africa', 'Ethiopia'],
-    standards: ['Local Grid Codes', 'IEC Compliance', 'Regional Standards'],
+    standards: ['IEC Compliance', 'Regional Standards', 'Project Specifications'],
   },
 ]
 
@@ -31,14 +31,14 @@ export function RegionalAdaptation() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             <MapPin className="w-4 h-4" />
-            Regional Adaptation
+            Export Markets
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
-            Custom Design for Local Grid Standards
+            Serving Industrial and Utility Projects Worldwide
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            We support custom transformer designs tailored to different national grid standards, 
-            ensuring seamless installation and reliable operation in your target market.
+            WENZE Power supplies transformers to industrial plants, utility companies, and infrastructure
+            projects across Southeast Asia, Middle East, Russia, and Africa.
           </p>
         </div>
 
@@ -85,12 +85,12 @@ export function RegionalAdaptation() {
         {/* Bottom Note */}
         <div className="mt-10 text-center bg-white rounded-xl p-6 border border-border">
           <p className="text-foreground font-medium mb-2">
-            Custom Design for Your Grid Requirements
+            Project-Specific Technical Support
           </p>
           <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-            We support custom transformer designs based on different national grid standards, 
-            voltage levels (50Hz / 60Hz), and local installation requirements. 
-            Contact us with your specific project needs.
+            Our engineering team provides specification support for industrial and utility projects.
+            Voltage levels (50Hz / 60Hz), capacity, and cooling options are configured per project requirements.
+            Contact us with your project details.
           </p>
         </div>
       </div>

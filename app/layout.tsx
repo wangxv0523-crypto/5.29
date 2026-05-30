@@ -10,9 +10,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.wenze-global.com'),
-  title: 'WENZE Power | Reliable Power Transformer Manufacturer & Exporter',
-  description: 'Professional power transformer manufacturer serving Southeast Asia, Middle East, Russia and Africa with custom designs for local grid standards.',
-  keywords: 'WENZE Power, power transformer manufacturer, transformer supplier China, Southeast Asia transformer, Middle East transformer, Russia transformer, oil immersed transformer, distribution transformer, custom transformer',
+  title: 'WENZE Power | Power Transformer Manufacturer & Exporter',
+  description: 'WENZE Power focuses on reliable transformer manufacturing and export solutions for industrial and power distribution projects in Southeast Asia, Middle East, Russia and Africa.',
+  keywords: 'WENZE Power, power transformer manufacturer, transformer exporter China, oil immersed transformer, dry type transformer, distribution transformer, pole mounted transformer, renewable energy transformer, high voltage transformer',
   icons: {
     icon: [
       {
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'WENZE Power | Reliable Power Transformer Manufacturer & Exporter',
-    description: 'Professional power transformer manufacturer serving Southeast Asia, Middle East, Russia and Africa.',
+    title: 'WENZE Power | Power Transformer Manufacturer & Exporter',
+    description: 'WENZE Power focuses on reliable transformer manufacturing and export solutions for industrial and power distribution projects.',
     type: 'website',
     url: 'https://www.wenze-global.com',
     siteName: 'WENZE Power',
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WENZE Power | Reliable Power Transformer Manufacturer',
-    description: 'Professional power transformer manufacturer serving Southeast Asia, Middle East, Russia and Africa.',
+    title: 'WENZE Power | Power Transformer Manufacturer',
+    description: 'WENZE Power focuses on reliable transformer manufacturing and export solutions for industrial and power distribution projects.',
     images: ['/api/og'],
   },
   alternates: {
@@ -70,7 +70,7 @@ const organizationSchema = {
   name: 'WENZE Power',
   url: 'https://www.wenze-global.com',
   logo: 'https://www.wenze-global.com/placeholder-logo.svg',
-  description: 'Professional power transformer manufacturer serving global markets with custom designs for local grid standards.',
+  description: 'WENZE Power focuses on reliable transformer manufacturing and export solutions for industrial and power distribution projects.',
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+86-159-0534-2475',

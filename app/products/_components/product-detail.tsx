@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, ArrowRight, MessageCircle, Mail, Droplets, Wind, Zap, Box } from 'lucide-react'
+import { ArrowLeft, ArrowRight, MessageCircle, Mail, Droplets, Wind, Zap, Box, Radio, Sun } from 'lucide-react'
 
 interface ProductData {
   id: string
-  iconName: 'droplets' | 'wind' | 'zap' | 'box'
+  iconName: 'droplets' | 'wind' | 'zap' | 'box' | 'radio' | 'sun'
   title: string
   shortDescription: string
   fullDescription: string
@@ -45,6 +45,8 @@ const iconMap = {
   wind: Wind,
   zap: Zap,
   box: Box,
+  radio: Radio,
+  sun: Sun,
 }
 
 export function ProductDetail({ product }: { product: ProductData }) {
@@ -183,7 +185,7 @@ export function ProductDetail({ product }: { product: ProductData }) {
               </table>
             </div>
             <p className="text-sm text-muted-foreground mt-6">
-              Custom sizes and specifications are available based on project requirements and local grid standards.
+              Custom sizes and specifications are available based on project technical requirements.
             </p>
           </div>
         </section>

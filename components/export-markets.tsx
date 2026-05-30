@@ -22,8 +22,8 @@ const markets = [
 const exportCapabilities = [
   {
     icon: Globe,
-    title: 'Grid Compliance',
-    description: 'Custom designs adapted to local grid standards and voltage requirements',
+    title: 'Technical Compliance',
+    description: 'Transformer designs configured to meet project voltage and capacity requirements',
   },
   {
     icon: FileCheck,
@@ -52,8 +52,8 @@ export function ExportMarkets() {
             Export Markets
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            We provide customized transformer solutions based on local grid standards,
-            voltage requirements, and industrial project specifications.
+            We supply transformer solutions for industrial, utility, and infrastructure projects
+            across multiple regions, configured to meet project specifications and voltage requirements.
           </p>
         </div>
 

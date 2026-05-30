@@ -4,21 +4,22 @@ import { Button } from '@/components/ui/button'
 
 const navigation = {
   products: [
-    { name: 'Oil-Immersed Transformers', href: '#products' },
-    { name: 'Dry-Type Transformers', href: '#products' },
-    { name: 'Distribution Transformers', href: '#products' },
-    { name: 'Custom Solutions', href: '#contact' },
+    { name: 'Oil-Immersed Transformers', href: '/products/oil-immersed-transformer' },
+    { name: 'Dry-Type Transformers', href: '/products/dry-type-transformer' },
+    { name: 'Distribution Transformers', href: '/products/distribution-transformer' },
+    { name: 'Pole Mounted Transformers', href: '/products/pole-mounted-transformer' },
+    { name: 'Renewable Energy Transformers', href: '/products/renewable-energy-transformer' },
   ],
   company: [
     { name: 'About Us', href: '#factory' },
-    { name: 'Factory Tour', href: '#factory' },
-    { name: 'Quality Assurance', href: '#capabilities' },
+    { name: 'Manufacturing', href: '#factory' },
+    { name: 'Engineering', href: '#capabilities' },
     { name: 'Contact Us', href: '#contact' },
   ],
   resources: [
     { name: 'Technical Specifications', href: '#products' },
-    { name: 'Certifications', href: '#capabilities' },
-    { name: 'FAQs', href: '#contact' },
+    { name: 'Engineering Capabilities', href: '#capabilities' },
+    { name: 'Export Markets', href: '#products' },
     { name: 'Get Quote', href: '#contact' },
   ],
 }
@@ -78,9 +79,7 @@ export function Footer() {
             </Link>
             
             <p className="text-white/70 leading-relaxed mb-6 max-w-sm">
-              Professional power transformer manufacturer. 
-              Delivering reliable solutions to clients in Southeast Asia, Middle East, Russia, and Africa
-              with custom designs for local grid standards.
+              WENZE Power focuses on reliable transformer manufacturing and export solutions for industrial and power distribution projects.
             </p>
 
             <div className="space-y-4">
@@ -162,36 +161,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
-            <div className="flex items-center gap-2 px-4 py-2 rounded bg-white/10 text-sm">
-              <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              ISO 9001:2015
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded bg-white/10 text-sm">
-              <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              IEC 60076
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded bg-white/10 text-sm">
-              <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              CE Certified
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded bg-white/10 text-sm">
-              <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              ANSI Standard
-            </div>
           </div>
         </div>
 

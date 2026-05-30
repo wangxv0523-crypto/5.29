@@ -30,7 +30,7 @@ export function Products() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
             <Card key={product.id} className="group overflow-hidden border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 cursor-pointer">
               <Link href={`/products/${product.id}`} className="block h-full">
@@ -94,8 +94,8 @@ export function Products() {
                 Need a Custom Transformer Solution?
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                We specialize in designing transformers tailored to your specific project requirements,
-                including custom voltage levels, special cooling systems, and regional grid compliance.
+                We supply transformers for a wide range of industrial and utility projects,
+                with flexible specifications to meet your technical requirements.
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
@@ -104,11 +104,11 @@ export function Products() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  Compliance with local grid standards
+                  IEC and ANSI compliant designs
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  Special environmental adaptations
+                  Special environmental and climate adaptations
                 </li>
               </ul>
             </div>

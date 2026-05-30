@@ -33,30 +33,29 @@ export function Hero() {
         <div className="max-w-3xl">
           {/* Product Label */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded bg-white/15 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
-            Oil-Immersed Power Transformer
+            Power Transformer Manufacturer & Exporter
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight text-balance">
-            Custom Power Transformer Solutions for Global Markets
+            Reliable Power Transformers for Industrial and Utility Projects
           </h1>
 
           {/* Subheading */}
           <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl text-pretty">
-            Reliable power transformer manufacturer serving Southeast Asia, Middle East, Russia and Africa.
-            Custom designs for local grid standards with competitive pricing.
+            WENZE Power focuses on reliable transformer manufacturing and export solutions for industrial and power distribution projects.
           </p>
 
           {/* Key Specs - Engineering Style */}
           <div className="mt-8 inline-flex flex-wrap gap-x-6 gap-y-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-5 py-3">
             <div className="flex items-center gap-2 text-white text-sm">
               <span className="text-white/50 font-medium">Voltage:</span>
-              <span className="font-semibold">0.4kV – 36kV</span>
+              <span className="font-semibold">0.4kV – 220kV</span>
             </div>
             <div className="w-px h-4 bg-white/20 self-center hidden sm:block" />
             <div className="flex items-center gap-2 text-white text-sm">
               <span className="text-white/50 font-medium">Capacity:</span>
-              <span className="font-semibold">50kVA – 10,000kVA</span>
+              <span className="font-semibold">10kVA – 100MVA</span>
             </div>
             <div className="w-px h-4 bg-white/20 self-center hidden sm:block" />
             <div className="flex items-center gap-2 text-white text-sm">

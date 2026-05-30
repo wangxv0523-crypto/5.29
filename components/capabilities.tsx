@@ -4,14 +4,14 @@ const capabilities = [
   {
     icon: Zap,
     title: 'Voltage Range',
-    value: '0.4kV – 36kV',
-    description: 'Wide voltage range covering low and medium voltage applications for diverse grid requirements.',
+    value: '0.4kV – 220kV',
+    description: 'Wide voltage range covering low, medium, and high voltage applications for diverse requirements.',
   },
   {
     icon: Settings,
     title: 'Capacity Range',
-    value: '50kVA – 10,000kVA',
-    description: 'Flexible capacity options from small distribution to large industrial power transformers.',
+    value: '10kVA – 100MVA',
+    description: 'Flexible capacity options from small pole-mounted units to large industrial power transformers.',
   },
   {
     icon: Cog,
@@ -21,21 +21,21 @@ const capabilities = [
   },
   {
     icon: Shield,
-    title: 'Certifications',
-    value: 'IEC / ANSI / CE',
-    description: 'Full compliance with international standards ensuring quality and safety.',
+    title: 'Standards Compliance',
+    value: 'IEC / ANSI',
+    description: 'Full compliance with international engineering standards ensuring quality and safety.',
   },
   {
     icon: Globe,
-    title: 'Regional Adaptation',
-    value: 'Multi-Standard',
-    description: 'Custom designs for Southeast Asian and Middle Eastern grid specifications.',
+    title: 'Export Markets',
+    value: '30+ Countries',
+    description: 'Serving industrial and utility clients across Southeast Asia, Middle East, Africa and beyond.',
   },
   {
     icon: Award,
-    title: 'Quality Assurance',
-    value: 'ISO 9001',
-    description: 'Rigorous quality control from raw materials to final testing and delivery.',
+    title: 'Quality Control',
+    value: 'Factory Tested',
+    description: 'Rigorous quality inspection from raw materials through final factory acceptance testing.',
   },
 ]
 
@@ -90,30 +90,30 @@ export function Capabilities() {
           ))}
         </div>
 
-        {/* Custom Design Section */}
+        {/* Engineering Section */}
         <div className="bg-primary rounded-2xl p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Custom Design for Your Grid Requirements
+                Engineering Support for Your Projects
               </h3>
               <p className="text-white/80 leading-relaxed mb-6">
-                We understand that every country has unique grid standards. Our engineering team 
-                specializes in adapting transformer designs to meet local regulations and operating 
-                conditions across Southeast Asia, Middle East, Africa, and beyond.
+                Our engineering team provides technical consultation and specification support
+                for industrial, utility, and renewable energy projects across Southeast Asia,
+                Middle East, Africa, and beyond.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-white/90">
                   <svg className="w-5 h-5 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Vietnam, Thailand, Indonesia grid standards</span>
+                  <span>Technical specification review and support</span>
                 </li>
                 <li className="flex items-center gap-3 text-white/90">
                   <svg className="w-5 h-5 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>UAE, Saudi Arabia, Qatar specifications</span>
+                  <span>Custom voltage and capacity configurations</span>
                 </li>
                 <li className="flex items-center gap-3 text-white/90">
                   <svg className="w-5 h-5 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20">

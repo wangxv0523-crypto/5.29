@@ -36,7 +36,7 @@ export async function GET() {
               marginBottom: '30px',
             }}
           >
-            Power Transformer Manufacturer
+            Power Transformer Manufacturer & Exporter
           </div>
           <div
             style={{
@@ -44,7 +44,7 @@ export async function GET() {
               color: '#FF8A00',
             }}
           >
-            Serving Southeast Asia, Middle East, Russia & Africa
+            Industrial & Power Distribution Projects Worldwide
           </div>
         </div>
       ),
