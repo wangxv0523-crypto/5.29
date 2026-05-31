@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, ArrowRight, MessageCircle, Mail, Droplets, Wind, Zap, Box, Radio, Sun } from 'lucide-react'
+import type { DetailedSpecTable } from '@/lib/products-data'
 
 interface ProductData {
   id: string
@@ -26,6 +27,7 @@ interface ProductData {
     dimensions: string
     weight?: string
   }>
+  detailedSpecTable?: DetailedSpecTable
 }
 
 const getWhatsAppMessage = (productName: string) => encodeURIComponent(
@@ -154,37 +156,38 @@ export function ProductDetail({ product }: { product: ProductData }) {
         </div>
       </section>
 
-      {product.specTable && product.specTable.length > 0 && (
+      {product.detailedSpecTable && product.detailedSpecTable.rows.length > 0 && (
         <section className="py-16 bg-white border-t border-border">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-primary mb-8">Standard Sizes & Specifications</h2>
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full min-w-max">
                 <thead>
                   <tr className="bg-primary">
-                    <th className="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Capacity</th>
-                    <th className="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Voltage</th>
-                    <th className="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Dimensions</th>
-                    {product.specTable[0]?.weight && (
-                      <th className="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Weight</th>
-                    )}
+                    {product.detailedSpecTable.columns.map((col) => (
+                      <th key={col.key} className="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider whitespace-nowrap">
+                        {col.label}{col.unit ? ` (${col.unit})` : ''}
+                      </th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
-                  {product.specTable.map((row, idx) => (
+                  {product.detailedSpecTable.rows.map((row, idx) => (
                     <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-secondary/30'}>
-                      <td className="px-6 py-4 text-sm font-semibold text-foreground">{row.capacity}</td>
-                      <td className="px-6 py-4 text-sm text-foreground">{row.voltage}</td>
-                      <td className="px-6 py-4 text-sm text-foreground">{row.dimensions}</td>
-                      {row.weight && (
-                        <td className="px-6 py-4 text-sm text-foreground">{row.weight}</td>
-                      )}
+                      {product.detailedSpecTable!.columns.map((col, colIdx) => (
+                        <td key={col.key} className={`px-4 py-3 text-sm text-foreground whitespace-nowrap ${colIdx === 0 ? 'font-semibold' : ''}`}>
+                          {row[col.key] != null ? String(row[col.key]) : '—'}
+                        </td>
+                      ))}
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="text-sm text-muted-foreground mt-6">
+            {product.detailedSpecTable.note && (
+              <p className="text-sm text-muted-foreground mt-4">{product.detailedSpecTable.note}</p>
+            )}
+            <p className="text-sm text-muted-foreground mt-2">
               Custom sizes and specifications are available based on project technical requirements.
             </p>
           </div>
