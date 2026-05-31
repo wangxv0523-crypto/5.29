@@ -51,7 +51,7 @@ export const products: Product[] = [
     shortDescription: 'High-efficiency oil-cooled transformers for industrial applications and power distribution networks.',
     fullDescription: 'Oil immersed transformers are widely used in industrial plants, utility networks, power distribution systems and renewable energy projects. The mineral oil provides excellent insulation and cooling properties.',
     standardSizes: ['100kVA', '250kVA', '500kVA', '1000kVA', '2500kVA', '5000kVA', '10000kVA'],
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E7%BD%91%E7%AB%99%E7%AC%AC%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%89%87-aoXskClX6ojrlf6kS8yYf2h66cKMzv.jpg',
+    image: '/高压电力变压器.jpg',
     specs: {
       voltage: '6kV – 11kV',
       capacity: '30kVA – 2,500kVA',
@@ -273,7 +273,7 @@ export const products: Product[] = [
     shortDescription: 'Compact single-phase and three-phase transformers designed for overhead line installation on utility poles.',
     fullDescription: 'Pole mounted transformers are compact, lightweight units designed for overhead distribution line applications. Widely used in rural electrification, last-mile power delivery, and utility distribution networks, they provide reliable step-down transformation from medium voltage to low voltage at the point of consumption.',
     standardSizes: ['5kVA', '10kVA', '25kVA', '50kVA', '75kVA', '100kVA', '167kVA'],
-    image: 'https://images.pexels.com/photos/1249158/pexels-photo-1249158.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/杆式变压器.png',
     specs: {
       voltage: '7.2kV – 34.5kV',
       capacity: '5kVA – 167kVA',
@@ -320,7 +320,7 @@ export const products: Product[] = [
     shortDescription: 'Purpose-built step-up transformers for solar PV, wind power, and other renewable energy applications.',
     fullDescription: 'Renewable energy transformers are specially engineered for the demanding requirements of solar photovoltaic farms, wind power plants, and energy storage systems. Designed to handle variable load profiles and harmonic content typical of inverter-based generation, these transformers ensure efficient and reliable power conversion from generation to the grid.',
     standardSizes: ['1000kVA', '1250kVA', '1600kVA', '2500kVA', '3150kVA'],
-    image: 'https://images.pexels.com/photos/9800029/pexels-photo-9800029.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/配电变压器 copy.png',
     specs: {
       voltage: '0.4kV / 10kV / 35kV',
       capacity: '1000kVA – 3,150kVA',

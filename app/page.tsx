@@ -1,6 +1,7 @@
 import { Header } from '@/components/header'
 import { Hero } from '@/components/hero'
 import { Products } from '@/components/products'
+import { About } from '@/components/about'
 import { Capabilities } from '@/components/capabilities'
 import { RegionalAdaptation } from '@/components/regional-adaptation'
 import { ExportMarkets } from '@/components/export-markets'
@@ -17,6 +18,7 @@ export default function Page() {
       <main>
         <Hero />
         <Products />
+        <About />
         <Capabilities />
         <ExportMarkets />
         <RegionalAdaptation />

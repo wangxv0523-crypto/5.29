@@ -29,7 +29,7 @@ const capabilities = [
     icon: Globe,
     title: 'Export Markets',
     value: '30+ Countries',
-    description: 'Serving industrial and utility clients across Southeast Asia, Middle East, Africa and beyond.',
+    description: 'Active in industrial and utility markets across Asia, Middle East, Africa and other regions.',
   },
   {
     icon: Award,
@@ -99,8 +99,7 @@ export function Capabilities() {
               </h3>
               <p className="text-white/80 leading-relaxed mb-6">
                 Our engineering team provides technical consultation and specification support
-                for industrial, utility, and renewable energy projects across Southeast Asia,
-                Middle East, Africa, and beyond.
+                for industrial, utility, and renewable energy projects.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-white/90">

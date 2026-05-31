@@ -34,11 +34,11 @@ export function RegionalAdaptation() {
             Export Markets
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
-            Serving Industrial and Utility Projects Worldwide
+            Regional Technical Customization
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            WENZE Power supplies transformers to industrial plants, utility companies, and infrastructure
-            projects across Southeast Asia, Middle East, Russia, and Africa.
+            WENZE Power supplies transformers configured for industrial and utility projects
+            across Southeast Asia, Middle East, Russia, and Africa.
           </p>
         </div>
 

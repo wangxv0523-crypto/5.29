@@ -38,12 +38,12 @@ export function Hero() {
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight text-balance">
-            Reliable Power Transformers for Industrial and Utility Projects
+            Reliable Power Transformer Manufacturing
           </h1>
 
           {/* Subheading */}
           <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl text-pretty">
-            WENZE Power focuses on reliable transformer manufacturing and export solutions for industrial and power distribution projects.
+            WENZE Power manufactures and exports high-quality transformers for diverse industrial and utility applications worldwide.
           </p>
 
           {/* Key Specs - Engineering Style */}
