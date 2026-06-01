@@ -51,7 +51,7 @@ export const products: Product[] = [
     shortDescription: 'High-efficiency oil-cooled transformers for industrial applications and power distribution networks.',
     fullDescription: 'Oil immersed transformers are widely used in industrial plants, utility networks, power distribution systems and renewable energy projects. The mineral oil provides excellent insulation and cooling properties.',
     standardSizes: ['100kVA', '250kVA', '500kVA', '1000kVA', '2500kVA', '5000kVA', '10000kVA'],
-    image: '/高压电力变压器.jpg',
+    image: '/oil-immersed-transformer.jpg.jpg',
     specs: {
       voltage: '6kV – 11kV',
       capacity: '30kVA – 2,500kVA',
@@ -109,7 +109,7 @@ export const products: Product[] = [
     shortDescription: 'Environmentally friendly air-cooled transformers for indoor installations with high fire safety.',
     fullDescription: 'Dry type transformers use air as the cooling medium, eliminating the need for oil. They are ideal for indoor applications in commercial buildings, hospitals, and data centers.',
     standardSizes: ['125kVA', '250kVA', '500kVA', '1000kVA', '1600kVA', '2500kVA'],
-    image: '/干式变压器.png',
+    image: '/dry-type-transformer.jpg.png',
     specs: {
       voltage: '6kV – 11kV',
       capacity: '125kVA – 2,500kVA',
@@ -165,7 +165,7 @@ export const products: Product[] = [
     shortDescription: 'Reliable transformers for utility power distribution networks and smart grid applications.',
     fullDescription: 'Distribution transformers are designed for utility power distribution networks. They are commonly used in residential areas, commercial developments, and urban distribution systems.',
     standardSizes: ['50kVA', '100kVA', '160kVA', '250kVA', '400kVA', '630kVA', '1000kVA'],
-    image: '/配电变压器.png',
+    image: '/distribution-transformer.jpg.png',
     specs: {
       voltage: '6kV – 11kV',
       capacity: '30kVA – 2,500kVA',
