@@ -34,10 +34,11 @@ export function Products() {
           {products.map((product) => (
             <Card key={product.id} className="group overflow-hidden border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 cursor-pointer">
               <Link href={`/products/${product.id}`} className="block h-full">
-                <div className="relative h-52 overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
-                    style={{ backgroundImage: `url('${product.image}')` }}
+                <div className="relative h-52 overflow-hidden bg-secondary">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
