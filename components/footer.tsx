@@ -12,8 +12,8 @@ const navigation = {
     { name: 'Renewable Energy Transformers', href: '/products/renewable-energy-transformer' },
   ],
   company: [
-    { name: 'About Us', href: '#factory' },
-    { name: 'Manufacturing', href: '#factory' },
+    { name: 'About Us', href: '#about' },
+    { name: 'Manufacturing', href: '#about' },
     { name: 'Engineering', href: '#capabilities' },
     { name: 'Contact Us', href: '#contact' },
   ],

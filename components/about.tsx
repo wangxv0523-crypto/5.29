@@ -22,7 +22,7 @@ export function About() {
           <img
             src="/大门口.png"
             alt="WENZE Power Manufacturing Facility Gate"
-            className="w-full h-full object-cover aspect-[21/9]"
+            className="w-full object-cover aspect-[21/9]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
         </div>

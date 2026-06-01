@@ -59,12 +59,31 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    setIsSubmitting(false)
-    setSubmitted(true)
+
+    try {
+      // Send form data to Formspree
+      // Replace YOUR_FORM_ID with your actual Formspree form ID
+      // Get your form ID from: https://formspree.io/
+      const formData = new FormData(e.currentTarget)
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        setIsSubmitting(false)
+        setSubmitted(true)
+      } else {
+        throw new Error('Form submission failed')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setIsSubmitting(false)
+      alert('Failed to submit form. Please try again or use WhatsApp instead.')
+    }
   }
 
   return (
