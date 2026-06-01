@@ -87,47 +87,6 @@ export function Products() {
           ))}
         </div>
 
-        <div className="mt-16 bg-white rounded-xl border border-border p-8 md:p-10">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-primary mb-3">
-                Need a Custom Transformer Solution?
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                We supply transformers for a wide range of industrial and utility projects,
-                with flexible specifications to meet your technical requirements.
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  Custom voltage and capacity configurations
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  IEC and ANSI compliant designs
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  Special environmental and climate adaptations
-                </li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-4">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-14 text-base">
-                <Link href="#contact">
-                  <ArrowRight className="w-5 h-5 mr-2" />
-                  Request Custom Quote
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10 font-semibold h-14 text-base">
-                <a href={`https://wa.me/8615905342475?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp Us Now
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

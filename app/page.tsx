@@ -3,10 +3,6 @@ import { Hero } from '@/components/hero'
 import { Products } from '@/components/products'
 import { About } from '@/components/about'
 import { Capabilities } from '@/components/capabilities'
-import { RegionalAdaptation } from '@/components/regional-adaptation'
-import { ExportMarkets } from '@/components/export-markets'
-import { Factory } from '@/components/factory'
-import { TrustStatement } from '@/components/trust-statement'
 import { ContactForm } from '@/components/contact-form'
 import { WhatsAppButton } from '@/components/whatsapp-button'
 import { Footer } from '@/components/footer'
@@ -20,10 +16,6 @@ export default function Page() {
         <Products />
         <About />
         <Capabilities />
-        <ExportMarkets />
-        <RegionalAdaptation />
-        <Factory />
-        <TrustStatement />
         <ContactForm />
       </main>
       <Footer />

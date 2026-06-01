@@ -41,32 +41,6 @@ Thank you.`
 export function Footer() {
   return (
     <footer className="bg-primary text-white">
-      {/* Quick Contact Bar */}
-      <div className="bg-accent">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-center md:text-left">
-              <p className="text-white font-bold text-lg">Ready to Get Started?</p>
-              <p className="text-white/90 text-sm">Contact us today for a customized transformer quote</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button asChild className="bg-white hover:bg-white/90 text-accent font-bold">
-                <Link href="#contact">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Request Quote
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white/10 font-bold">
-                <a href={`https://wa.me/8615905342475?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  WhatsApp Us
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Company Info */}
