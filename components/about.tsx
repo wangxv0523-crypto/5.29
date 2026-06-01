@@ -18,7 +18,7 @@ export function About() {
         </div>
 
         {/* Factory Gate Image */}
-        <div className="relative rounded-xl overflow-hidden mb-12 bg-secondary shadow-lg">
+        <div className="relative rounded-xl overflow-hidden mb-12 bg-black shadow-lg">
           <img
             src="/大门口.png"
             alt="WENZE Power Manufacturing Facility Gate"
@@ -32,10 +32,10 @@ export function About() {
           <div>
             <h3 className="text-2xl font-bold text-primary mb-4">Company Overview</h3>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Founded with a commitment to delivering reliable, high-quality power transformers, WENZE Power operates a modern manufacturing facility equipped with advanced production and testing equipment. Our team combines technical expertise with practical manufacturing experience to produce transformers that meet rigorous international standards.
+              Founded with a commitment to delivering reliable, high-quality power transformers, WENZE Power operates a modern manufacturing facility equipped with advanced production and testing [...]
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              We manufacture transformer solutions across a wide voltage and capacity range, from compact distribution units to large industrial power transformers. Each unit undergoes comprehensive factory testing to ensure performance reliability and compliance with IEC and ANSI standards.
+              We manufacture transformer solutions across a wide voltage and capacity range, from compact distribution units to large industrial power transformers. Each unit undergoes comprehensi[...]
             </p>
 
             {/* Key Stats */}
@@ -88,7 +88,7 @@ export function About() {
         </div>
 
         {/* Production Workshop Image */}
-        <div className="relative rounded-xl overflow-hidden bg-secondary shadow-lg">
+        <div className="relative rounded-xl overflow-hidden bg-black shadow-lg">
           <img
             src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
             alt="WENZE Power Production Workshop"
