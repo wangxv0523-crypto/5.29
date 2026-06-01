@@ -34,7 +34,7 @@ export function Products() {
           {products.map((product) => (
             <Card key={product.id} className="group overflow-hidden border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 cursor-pointer">
               <Link href={`/products/${product.id}`} className="block h-full">
-                <div className="relative h-52 overflow-hidden bg-secondary">
+                <div className="relative h-52 overflow-hidden bg-black">
                   <img
                     src={product.image}
                     alt={product.title}
