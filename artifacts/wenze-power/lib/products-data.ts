@@ -39,6 +39,8 @@ export interface Product {
     standards: string
   }
   features: string[]
+  productDescription?: string
+  descriptionBullets?: string[]
   specTable?: ProductSpecRow[]
   detailedSpecTable?: DetailedSpecTable
 }
@@ -65,6 +67,13 @@ export const products: Product[] = [
       'Long service life',
       'Outdoor installation suitable',
       'Wide temperature range',
+    ],
+    productDescription: '专为商业、工业及变电站应用设计的节能油浸式变压器，符合 IEC 60076 标准，性能稳定可靠。',
+    descriptionBullets: [
+      '符合 IEC 60076 / S13 系列节能标准',
+      '电压等级 6kV–35kV，容量 30–2500kVA',
+      '优质矿物油或 FR3 天然酯绝缘',
+      '低空载损耗，长寿命设计',
     ],
     detailedSpecTable: {
       columns: [
@@ -126,6 +135,13 @@ export const products: Product[] = [
       'Indoor installation suitable',
       'Self-extinguishing insulation',
     ],
+    productDescription: '适用于室内变电站、数据中心、医院等对防火要求高的场所，符合 IEC 60076-11 标准。',
+    descriptionBullets: [
+      'F级/H级环氧树脂绝缘，防火安全',
+      '防护等级 IP20/IP23 可选',
+      '低噪音设计，低于 55dB',
+      '免维护，无需油液检测或更换',
+    ],
     detailedSpecTable: {
       columns: [
         { key: 'capacity_kva', label: '容量', unit: 'kVA' },
@@ -184,6 +200,13 @@ export const products: Product[] = [
       'Long operational life',
       'Easy maintenance',
       'Wide deployment range',
+    ],
+    productDescription: '覆盖住宅、商业、工业及农村电气化项目，电压等级 10–35kV，容量 50–2500kVA。',
+    descriptionBullets: [
+      '支持杆式、落地式、变电站式多种安装方式',
+      '取向硅钢芯，低空载损耗',
+      '符合 IEC 60076 标准，阻抗 4%–6% 可定制',
+      '已部署于全球 80+ 国家和地区',
     ],
     detailedSpecTable: {
       columns: [
@@ -245,6 +268,13 @@ export const products: Product[] = [
       'Heavy-duty construction',
       'Extended service life',
     ],
+    productDescription: '专为公用事业输电、电厂升压及大型工业基础设施设计，电压等级 66kV–750kV。',
+    descriptionBullets: [
+      '容量 10MVA–500MVA，通过 IEC 认证',
+      '油纸绝缘，介电强度优异',
+      '配备高级有载调压器，实时电压调节',
+      '适应海拔 4000m、极端温度 -50°C 至 +55°C',
+    ],
     detailedSpecTable: {
       columns: [
         { key: 'capacity_kva', label: '额定容量', unit: 'kVA' },
@@ -296,6 +326,13 @@ export const products: Product[] = [
       'Overhead line installation',
       'Weather-resistant design',
     ],
+    productDescription: '专为架空配电网络设计，适用于公用事业公司及农村电气化项目，低维护、高可靠。',
+    descriptionBullets: [
+      '全钢密封罐体，耐腐蚀涂料',
+      '冷轧取向硅钢芯，空载损耗降低 15–20%',
+      '效率 ≥98%，低噪音，过载能力强',
+      '可选完全自保护配置，集成断路器和避雷器',
+    ],
     detailedSpecTable: {
       columns: [
         { key: 'capacity_kva', label: '额定功率', unit: 'kVA' },
@@ -344,6 +381,13 @@ export const products: Product[] = [
       'High overload capability',
       'Solar PV and wind compatible',
       'Suitable for energy storage systems',
+    ],
+    productDescription: '适用于太阳能光伏、风力发电及储能系统，支持可变负载与高谐波环境，符合 IEC 60076。',
+    descriptionBullets: [
+      '覆盖 400V–220kV，容量 1000–3150kVA',
+      '先进谐波抑制设计，适配逆变器输出',
+      '支持双向升压，适用于储能充放电循环',
+      '铁芯/冷却/绝缘全面定制，适应极端环境',
     ],
     detailedSpecTable: {
       columns: [

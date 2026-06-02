@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, ArrowRight, MessageCircle, Mail, Droplets, Wind, Zap, Box, Radio, Sun } from 'lucide-react'
+import { ArrowLeft, ArrowRight, MessageCircle, Mail, Droplets, Wind, Zap, Box, Radio, Sun, CheckCircle2 } from 'lucide-react'
 import type { DetailedSpecTable } from '@/lib/products-data'
 
 interface ProductData {
@@ -21,6 +21,8 @@ interface ProductData {
     standards: string
   }
   features: string[]
+  productDescription?: string
+  descriptionBullets?: string[]
   specTable?: Array<{
     capacity: string
     voltage: string
@@ -155,6 +157,43 @@ export function ProductDetail({ product }: { product: ProductData }) {
           </div>
         </div>
       </section>
+
+      {(product.productDescription || (product.descriptionBullets && product.descriptionBullets.length > 0)) && (
+        <section className="py-12 bg-secondary/20 border-t border-border">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              <div className="space-y-5">
+                {product.productDescription && (
+                  <p className="text-foreground leading-relaxed text-base">
+                    {product.productDescription}
+                  </p>
+                )}
+                {product.descriptionBullets && product.descriptionBullets.length > 0 && (
+                  <ul className="space-y-3">
+                    {product.descriptionBullets.map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-foreground leading-relaxed">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              <div className="flex justify-start md:justify-end">
+                <a
+                  href={`https://wa.me/8615905342475?text=${getWhatsAppMessage(product.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-semibold px-7 py-4 rounded-xl transition-colors shadow-md text-base"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp 询价
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {product.detailedSpecTable && product.detailedSpecTable.rows.length > 0 && (
         <section className="py-16 bg-white border-t border-border">
