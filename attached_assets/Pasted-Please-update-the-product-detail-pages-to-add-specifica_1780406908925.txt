@@ -1,0 +1,90 @@
+Please update the product detail pages to add specification tables from the following data. For each product, add a specs table section in the corresponding page file under app/products/.
+1. 油浸式变压器 (app/products/oil-immersed-transformer/page.tsx)
+Add a specs table with columns: 容量(kVA), 高压(kV), 低电压(kV), 频率(Hz), 连接组, 空载损耗(W), 负载损耗(W), 空载电流(%), 噪音(dB), 短路阻抗(%), 规格A×B(mm), 尺寸长×宽×高(mm), 重量(kg)
+Data rows:
+30, 6~11, 0.4, 50, D,yn11/Y,yn0, 80, 630/600, 0.5, 43, 4.0, 400×400, 830×650×950, 380
+50, same, same, same, same, 100, 910/870, 0.5, 43, same, 400×400, 850×680×960, 420
+80, same, same, same, same, 130, 1310/1250, 0.45, 44, same, 400×400, 870×700×1010, 520
+100, same, same, same, same, 150, 1580/1500, 0.45, 44, same, 400×400, 900×720×1020, 580
+160, same, same, same, same, 200, 2310/2200, 0.4, 46, same, 550×550, 1190×770×1090, 790
+200, same, same, same, same, 240, 2730/2600, 0.4, 47, same, 550×550, 1260×850×1120, 880
+250, same, same, same, same, 290, 3200/3050, 0.35, 48, same, 550×550, 1300×860×1140, 1020
+315, same, same, same, same, 340, 3830/3650, 0.35, 48, same, 660×660, 1370×910×1160, 1220
+400, same, same, same, same, 410, 4520/4300, 0.35, 48, same, 660×660, 1400×920×1220, 1430
+500, same, same, same, same, 480, 5410/5150, 0.3, 49, same, 660×660, 1530×1000×1280, 1730
+630, same, same, same, same, 570, 6200, 0.25, 49, 4.5, 660×660, 1610×1060×1320, 2100
+800, same, same, same, same, 700, 7500, 0.18, 50, same, 660×820, 1670×1120×1380, 2480
+1000, same, same, same, same, 830, 10300, 0.17, 50, same, 660×820, 1720×1160×1400, 2880
+1250, same, same, same, same, 970, 12000, 0.17, 52, same, 660×820, 1770×1180×1500, 3500
+1600, same, same, same, same, 1170, 14500, 0.16, 52, same, 820×1070, 1860×1240×1600, 4130
+2000, same, same, same, same, 1360, 18300, 0.16, 54, 5, 820×1070, 1950×1320×1720, 5420
+2500, same, same, same, same, 1600, 21200, 0.15, 54, same, 820×1070, 2070×1400×1800, 6500
+Note: 以上为10kV S13系列节能油浸式变压器的技术参数。
+
+2. 干式变压器 (app/products/dry-type-transformer/page.tsx)
+Add a specs table with columns: 容量(kVA), 高压(kV), 低电压(kV), 频率(Hz), 连接组, 空载损耗SCB12(W), 空载损耗SCB13(W), 负载损耗SCB12(W), 负载损耗SCB13(W), 空载电流(%), 噪音(dB), 短路阻抗(%), 规格A×B(mm), 主机尺寸(mm), 主机重量(kg)
+Data rows:
+125, 6~11, 0.4, 50, Dyn11/Yyn0, 375, 335, 1850, 1660, 1.3, 58, 4, 550×550, 920×610×1120, 685
+160, same, same, same, same, 430, 385, 2130, 1910, 1.3, 58, same, 550×550, 950×610×1120, 735
+200, same, same, same, same, 495, 445, 2530, 2270, 1.1, 58, same, 660×660, 990×720×1150, 820
+250, same, same, same, same, 575, 515, 2760, 2480, 1.1, 58, same, 660×660, 1030×720×1180, 960
+315, same, same, same, same, 705, 635, 3470, 3120, 1, 60, same, 660×660, 1050×720×1210, 1080
+400, same, same, same, same, 785, 705, 3990, 3590, 1, 60, same, 660×660, 1060×720×1270, 1330
+500, same, same, same, same, 930, 835, 4880, 4390, 1, 62, same, 660×820, 1110×880×1340, 1480
+630, same, same, same, same, 1040, 935, 5960, 5360, 0.85, 62, 6, 660×820, 1240×880×1300, 1530
+800, same, same, same, same, 1210, 1090, 6960, 6260, 0.85, 64, same, 660×820, 1320×880×1350, 1840
+1000, same, same, same, same, 1410, 1270, 8130, 7310, 0.85, 64, same, 660×820, 1360×880×1460, 2320
+1250, same, same, same, same, 1670, 1500, 9690, 8720, 0.85, 65, same, 820×820, 1430×880×1520, 2530
+1600, same, same, same, same, 1960, 1760, 11700, 10500, 0.85, 66, same, 1070×1070, 1470×1130×1690, 3010
+2000, same, same, same, same, 2440, 2190, 14400, 13000, 0.7, 66, same, 1070×1070, 1510×1130×1770, 3540
+2500, same, same, same, same, 2880, 2590, 17100, 15400, 0.7, 71, same, 1070×1070, 1560×1130×1900, 4190
+Note: 以上为10kV级SCB系列干式变压器的技术参数。
+
+3. 配电变压器 (app/products/distribution-transformer/page.tsx)
+Use the same table structure and data as 油浸式变压器 above (same specs).
+
+4. 高压电力变压器 (app/products/high-voltage-power-transformer/page.tsx)
+Add a specs table with columns: 额定容量(kVA), 高压(kV), 高压抽头范围(%), 中压(kV), 低压(kV), 连接组, 空载损耗(kW), 负载损耗(kW), 空载电流(%), 短路阻抗(%)
+Data rows:
+6300, 110, ±4×1.25/±6×1.25/±8×1.25, 36~38.5, 6.3~21, YNyn0d11, 7.7, 42, 0.61, 高到中10.5/高到低17.5~19/中到低6.5
+8000, same, same, same, same, same, 9.2, 50, 0.61, same
+10000, same, same, same, same, same, 10.9, 59, 0.57, same
+12500, same, same, same, same, same, 12.9, 70, 0.57, same
+16000, same, same, same, same, same, 15.4, 86, 0.54, same
+20000, same, same, same, same, same, 18.2, 101, 0.54, same
+25000, same, same, same, same, same, 21.6, 120, 0.5, same
+31500, same, same, same, same, same, 25.7, 142, 0.5, same
+40000, same, same, same, same, same, 30.8, 170, 0.46, same
+50000, same, same, same, same, same, 36.4, 202, 0.46, same
+63000, same, same, same, same, same, 43.3, 243, 0.42, same
+Note: 以上为110kV电力变压器的技术参数。
+
+5. 杆式变压器 (app/products/pole-mounted-transformer/page.tsx)
+Add a specs table with columns: 额定功率(kVA), 高电压(V), 低电压(V), 空载损耗(W), 负载损耗(W), W(mm), D(mm), H(mm), 油重(kg), 总重量(kg)
+Data rows:
+5, 34500/19920/13800/7957/13200/7620/12470/7200, 120-240/240-480/347/600, 19, 75, 465, 485, 855, 15, 92
+10, same, same, 36, 120, 500, 525, 885, 22, 150
+15, same, same, 50, 195, 520, 565, 905, 30, 210
+25, same, same, 80, 290, 560, 590, 935, 45, 258
+37.5, same, same, 105, 360, 610, 625, 935, 50, 340
+50, same, same, 135, 500, 635, 675, 1035, 62, 395
+75, same, same, 190, 650, 745, 840, 1035, 88, 480
+100, same, same, 210, 850, 770, 965, 1135, 94, 530
+167, same, same, 350, 1410, 795, 890, 1335, 138, 680
+
+6. 可再生能源变压器 (app/products/renewable-energy-transformer/page.tsx)
+Add a specs section (not a data table, but a key-value list) with:
+
+额定功率: 1000kVA / 1250kVA / 1600kVA / 2500kVA / 3150kVA
+额定一次电压: 10kV、11kV、20kV、33kV、35kV 或其他
+二次电压: 定制
+频率: 50/60Hz
+向量组: Dyn11, Ynd11, Dyn11yn11, YNd11d11
+缠绕材料: 铝/铜
+零序阻抗: 定制
+安装高度: ≤1000米或定制
+颜色: ANSI 70 浅灰色/蒙塞尔 7GY3.29/1.5 或定制
+储罐材料: 低碳钢，304不锈钢
+
+
+For all tables, use a clean responsive HTML table styled with Tailwind CSS classes. Use overflow-x-auto wrapper for mobile. Add a note below each table in small gray text.
