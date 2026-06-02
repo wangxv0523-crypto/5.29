@@ -71,7 +71,7 @@ export function ProductDetail({ product }: { product: ProductData }) {
         </div>
       </div>
 
-      <section className="py-12 md:py-16">
+      <section className="pt-0 pb-12 md:pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="relative">
