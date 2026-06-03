@@ -9,6 +9,7 @@ interface ProductData {
   id: string
   iconName: 'droplets' | 'wind' | 'zap' | 'box' | 'radio' | 'sun'
   title: string
+  titleEn?: string
   shortDescription: string
   fullDescription: string
   standardSizes: string[]
@@ -21,9 +22,9 @@ interface ProductData {
     cooling: string
     standards: string
   }
-  features: string[]
+  features: Array<{ zh: string; en: string }>
   productDescription?: string
-  descriptionBullets?: string[]
+  descriptionBullets?: Array<{ zh: string; en: string }>
   specTable?: Array<{
     capacity: string
     voltage: string
@@ -87,11 +88,20 @@ export function ProductDetail({ product }: { product: ProductData }) {
               {product.descriptionBullets && product.descriptionBullets.length > 0 && (
                 <div>
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">产品卖点</h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {product.descriptionBullets.map((bullet, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-foreground leading-relaxed">{bullet}</span>
+                        <div className="flex-1">
+                          <div className="text-sm text-foreground font-medium leading-relaxed">
+                            {typeof bullet === 'string' ? bullet : bullet.zh}
+                          </div>
+                          {typeof bullet !== 'string' && (
+                            <div className="text-xs text-muted-foreground leading-relaxed mt-0.5">
+                              {bullet.en}
+                            </div>
+                          )}
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -104,9 +114,9 @@ export function ProductDetail({ product }: { product: ProductData }) {
 
               {/* Breadcrumb */}
               <nav className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                <Link href="/" className="hover:text-primary transition-colors">家</Link>
+                <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                 <span>/</span>
-                <Link href="/#products" className="hover:text-primary transition-colors">产品</Link>
+                <Link href="/#products" className="hover:text-primary transition-colors">Products</Link>
                 <span>/</span>
                 <span className="text-foreground font-medium">{product.title}</span>
               </nav>
@@ -116,11 +126,16 @@ export function ProductDetail({ product }: { product: ProductData }) {
                 <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center">
                   <Icon className="w-4 h-4 text-primary" />
                 </div>
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">电力变压器</span>
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Power Transformer</span>
               </div>
 
-              {/* Title */}
-              <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight">{product.title}</h1>
+              {/* Title with English translation */}
+              <div>
+                <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight">{product.title}</h1>
+                {product.titleEn && (
+                  <p className="text-lg text-muted-foreground mt-1">{product.titleEn}</p>
+                )}
+              </div>
 
               {/* Short description */}
               <p className="text-muted-foreground leading-relaxed">{product.fullDescription}</p>
@@ -128,32 +143,41 @@ export function ProductDetail({ product }: { product: ProductData }) {
               {/* Specs table */}
               <div className="rounded-xl border border-border overflow-hidden">
                 <div className="bg-primary px-5 py-3">
-                  <h2 className="text-sm font-bold text-white tracking-wider">技术规格</h2>
+                  <h2 className="text-sm font-bold text-white tracking-wider">Technical Specifications</h2>
                 </div>
                 <div className="divide-y divide-border">
                   {[
-                    { label: '电压', value: product.specs.voltage },
-                    { label: '容量', value: product.specs.capacity },
-                    { label: '频率', value: product.specs.frequency },
-                    { label: '冷却', value: product.specs.cooling },
-                    { label: '标准', value: product.specs.standards },
+                    { label: 'Voltage', value: product.specs.voltage },
+                    { label: 'Capacity', value: product.specs.capacity },
+                    { label: 'Frequency', value: product.specs.frequency },
+                    { label: 'Cooling Method', value: product.specs.cooling },
+                    { label: 'Standard', value: product.specs.standards },
                   ].map((row, i) => (
                     <div key={row.label} className={`flex items-center px-5 py-2.5 ${i % 2 === 0 ? 'bg-white' : 'bg-secondary/30'}`}>
-                      <span className="w-24 shrink-0 text-xs font-semibold text-muted-foreground">{row.label}</span>
+                      <span className="w-32 shrink-0 text-xs font-semibold text-muted-foreground">{row.label}</span>
                       <span className="text-sm font-semibold text-foreground">{row.value}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* 主要特点 */}
+              {/* 主要特点 / Key Features */}
               <div>
-                <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">主要特点</h3>
-                <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
+                <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">Key Features</h3>
+                <ul className="space-y-2">
                   {product.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                      {f}
+                    <li key={typeof f === 'string' ? f : f.zh} className="flex items-start gap-3 text-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-1.5" />
+                      <div>
+                        <div className="text-foreground font-medium">
+                          {typeof f === 'string' ? f : f.zh}
+                        </div>
+                        {typeof f !== 'string' && (
+                          <div className="text-muted-foreground text-xs">
+                            {f.en}
+                          </div>
+                        )}
+                      </div>
                     </li>
                   ))}
                 </ul>
@@ -164,13 +188,18 @@ export function ProductDetail({ product }: { product: ProductData }) {
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-12 px-6">
                   <a href={`https://wa.me/8615905342475?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5 mr-2" />
-                    WhatsApp 查询
+                    WhatsApp
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-semibold h-12 px-6">
                   <a href="mailto:sales@wenze-global.com">
                     <Mail className="w-5 h-5 mr-2" />
-                    给我们发邮件
+                    Email Us
+                  </a>
+                </Button>
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold h-12 px-6">
+                  <a href={`https://wa.me/8615905342475?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
+                    Get Quote
                   </a>
                 </Button>
               </div>
@@ -183,7 +212,7 @@ export function ProductDetail({ product }: { product: ProductData }) {
       {product.detailedSpecTable && product.detailedSpecTable.rows.length > 0 && (
         <section className="py-16 bg-white border-t border-border">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-primary mb-8">标准规格参数</h2>
+            <h2 className="text-2xl font-bold text-primary mb-8">Standard Specification Parameters</h2>
             <div className="overflow-x-auto">
               <table className="w-full min-w-max">
                 <thead>
@@ -220,21 +249,21 @@ export function ProductDetail({ product }: { product: ProductData }) {
       <section className="py-16 bg-primary">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">立即询价</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Request a Quote</h2>
             <p className="text-white/80 mb-8">
-              发送您的项目需求，我们将在 <span className="font-bold text-accent">24小时</span> 内提供报价。
+              Send your project requirements and we'll provide a quote within <span className="font-bold text-accent">24 hours</span>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-14 px-8 text-base">
                 <a href={`https://wa.me/8615905342475?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp 咨询
+                  WhatsApp Inquiry
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold h-14 px-8 text-base">
                 <a href="mailto:sales@wenze-global.com">
                   <Mail className="w-5 h-5 mr-2" />
-                  发送邮件
+                  Send Email
                 </a>
               </Button>
             </div>
@@ -249,12 +278,12 @@ export function ProductDetail({ product }: { product: ProductData }) {
             <Button asChild variant="ghost" className="text-muted-foreground hover:text-primary">
               <Link href="/#products">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                返回产品列表
+                Back to Products
               </Link>
             </Button>
             <Button asChild variant="ghost" className="text-muted-foreground hover:text-primary">
               <Link href="/#contact">
-                联系我们
+                Contact Us
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>

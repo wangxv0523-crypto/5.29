@@ -27,6 +27,7 @@ export interface Product {
   id: string
   icon: React.ElementType
   title: string
+  titleEn?: string
   shortDescription: string
   fullDescription: string
   standardSizes: string[]
@@ -39,9 +40,9 @@ export interface Product {
     cooling: string
     standards: string
   }
-  features: string[]
+  features: Array<{ zh: string; en: string }>
   productDescription?: string
-  descriptionBullets?: string[]
+  descriptionBullets?: Array<{ zh: string; en: string }>
   specTable?: ProductSpecRow[]
   detailedSpecTable?: DetailedSpecTable
 }
@@ -51,6 +52,7 @@ export const products: Product[] = [
     id: 'oil-immersed-transformer',
     icon: Droplets,
     title: '油浸式变压器',
+    titleEn: 'Oil Immersed Transformer',
     shortDescription: '高效油冷式变压器，广泛应用于工业及电力配网场景。',
     fullDescription: '油浸式变压器广泛应用于工业工厂、公用电网、配电系统和可再生能源项目。矿物油提供了优异的绝缘和冷却性能。',
     standardSizes: ['100kVA', '250kVA', '500kVA', '1000kVA', '2500kVA', '5000kVA', '10000kVA'],
@@ -64,18 +66,18 @@ export const products: Product[] = [
       standards: 'IEC 60076',
     },
     features: [
-      '高过载能力',
-      '低噪音运行',
-      '使用寿命长',
-      '适合户外安装',
-      '宽温度范围',
+      { zh: '高过载能力', en: 'High Overload Capacity' },
+      { zh: '低噪音运行', en: 'Low Noise Operation' },
+      { zh: '使用寿命长', en: 'Long Service Life' },
+      { zh: '适合户外安装', en: 'Suitable for Outdoor Installation' },
+      { zh: '宽温度范围', en: 'Wide Temperature Range' },
     ],
     productDescription: '专为商业、工业及变电站应用设计的节能油浸式变压器，符合 IEC 60076 标准，性能稳定可靠。',
     descriptionBullets: [
-      '符合 IEC 60076 / S13 系列节能标准',
-      '电压等级 6kV–35kV，容量 30–2500kVA',
-      '优质矿物油或 FR3 天然酯绝缘',
-      '低空载损耗，长寿命设计',
+      { zh: '符合 IEC 60076 / S13 系列节能标准', en: 'IEC 60076 / S13 Energy Efficiency Standard' },
+      { zh: '电压等级 6kV–35kV，容量 30–2500kVA', en: 'Voltage 6kV–35kV, Capacity 30–2500kVA' },
+      { zh: '优质矿物油或 FR3 天然酯绝缘', en: 'Mineral Oil or FR3 Natural Ester Insulation' },
+      { zh: '低空载损耗，长寿命设计', en: 'Low No-load Loss, Long Service Life' },
     ],
     detailedSpecTable: {
       columns: [
@@ -119,6 +121,7 @@ export const products: Product[] = [
     id: 'dry-type-transformer',
     icon: Wind,
     title: '干式变压器',
+    titleEn: 'Dry Type Transformer',
     shortDescription: '环保型空冷变压器，适用于室内安装，防火安全性高。',
     fullDescription: '干式变压器采用空气作为冷却介质，无需使用油液。适用于商业建筑、医院和数据中心等室内应用场所。',
     standardSizes: ['125kVA', '250kVA', '500kVA', '1000kVA', '1600kVA', '2500kVA'],
@@ -132,18 +135,18 @@ export const products: Product[] = [
       standards: 'IEC 60076-11',
     },
     features: [
-      '无火灾危险',
-      '环保无污染',
-      '低维护成本',
-      '适合室内安装',
-      '自熄绝缘',
+      { zh: '无火灾危险', en: 'Fire-Safe' },
+      { zh: '环保无污染', en: 'Eco-Friendly' },
+      { zh: '低维护成本', en: 'Low Maintenance Cost' },
+      { zh: '适合室内安装', en: 'Suitable for Indoor Installation' },
+      { zh: '自熄绝缘', en: 'Self-Extinguishing Insulation' },
     ],
     productDescription: '适用于室内变电站、数据中心、医院等对防火要求高的场所，符合 IEC 60076-11 标准。',
     descriptionBullets: [
-      'F级/H级环氧树脂绝缘，防火安全',
-      '防护等级 IP20/IP23 可选',
-      '低噪音设计，低于 55dB',
-      '免维护，无需油液检测或更换',
+      { zh: 'F级/H级环氧树脂绝缘，防火安全', en: 'F/H Class Epoxy Resin Insulation, Fire-Safe' },
+      { zh: '防护等级 IP20/IP23 可选', en: 'Protection Grade IP20/IP23 Optional' },
+      { zh: '低噪音设计，低于 55dB', en: 'Low Noise Design, <55dB' },
+      { zh: '免维护，无需油液检测或更换', en: 'Maintenance-Free, No Oil Testing Required' },
     ],
     detailedSpecTable: {
       columns: [
@@ -186,6 +189,7 @@ export const products: Product[] = [
     id: 'distribution-transformer',
     icon: Box,
     title: '配电变压器',
+    titleEn: 'Distribution Transformer',
     shortDescription: '适用于公用配电网络及智能电网的可靠变压器。',
     fullDescription: '配电变压器专为公用电力配电网络设计，广泛应用于住宅区、商业开发项目和城市配电系统。',
     standardSizes: ['50kVA', '100kVA', '160kVA', '250kVA', '400kVA', '630kVA', '1000kVA'],
@@ -199,18 +203,18 @@ export const products: Product[] = [
       standards: 'IEC 60076',
     },
     features: [
-      '性能可靠',
-      '低能耗',
-      '长运行寿命',
-      '便于维护',
-      '部署范围广',
+      { zh: '性能可靠', en: 'Reliable Performance' },
+      { zh: '低能耗', en: 'Low Energy Consumption' },
+      { zh: '长运行寿命', en: 'Long Operating Life' },
+      { zh: '便于维护', en: 'Easy to Maintain' },
+      { zh: '部署范围广', en: 'Wide Deployment Range' },
     ],
     productDescription: '覆盖住宅、商业、工业及农村电气化项目，电压等级 10–35kV，容量 50–2500kVA。',
     descriptionBullets: [
-      '支持杆式、落地式、变电站式多种安装方式',
-      '取向硅钢芯，低空载损耗',
-      '符合 IEC 60076 标准，阻抗 4%–6% 可定制',
-      '已部署于全球 80+ 国家和地区',
+      { zh: '支持杆式、落地式、变电站式多种安装方式', en: 'Pole-Mounted, Ground-Mounted, and Substation Types' },
+      { zh: '取向硅钢芯，低空载损耗', en: 'Grain-Oriented Silicon Steel Core, Low No-load Loss' },
+      { zh: '符合 IEC 60076 标准，阻抗 4%–6% 可定制', en: 'IEC 60076 Compliant, Customizable 4%–6% Impedance' },
+      { zh: '已部署于全球 80+ 国家和地区', en: 'Deployed in 80+ Countries Worldwide' },
     ],
     detailedSpecTable: {
       columns: [
@@ -254,6 +258,7 @@ export const products: Product[] = [
     id: 'high-voltage-power-transformer',
     icon: Zap,
     title: '高压电力变压器',
+    titleEn: 'High Voltage Power Transformer',
     shortDescription: '适用于公用电网及大型工业电力系统的重型变压器，电压等级高达220kV。',
     fullDescription: '高压电力变压器专为公用输电网、大型工业电力系统和重大基础设施项目设计，可处理高电压等级，性能卓越，可靠性高。',
     standardSizes: ['6.3MVA', '10MVA', '16MVA', '25MVA', '40MVA', '63MVA'],
@@ -267,18 +272,18 @@ export const products: Product[] = [
       standards: 'IEC 60076',
     },
     features: [
-      '超强电压容量',
-      '先进冷却系统',
-      '有载调压开关',
-      '重型坚固结构',
-      '超长使用寿命',
+      { zh: '超强电压容量', en: 'Ultra-High Voltage Capacity' },
+      { zh: '先进冷却系统', en: 'Advanced Cooling System' },
+      { zh: '有载调压开关', en: 'On-Load Tap Changer' },
+      { zh: '重型坚固结构', en: 'Robust Heavy-Duty Structure' },
+      { zh: '超长使用寿命', en: 'Extended Service Life' },
     ],
     productDescription: '专为公用事业输电、电厂升压及大型工业基础设施设计，电压等级 66kV–750kV。',
     descriptionBullets: [
-      '容量 10MVA–500MVA，通过 IEC 认证',
-      '油纸绝缘，介电强度优异',
-      '配备高级有载调压器，实时电压调节',
-      '适应海拔 4000m、极端温度 -50°C 至 +55°C',
+      { zh: '容量 10MVA–500MVA，通过 IEC 认证', en: 'Capacity 10MVA–500MVA, IEC Certified' },
+      { zh: '油纸绝缘，介电强度优异', en: 'Oil-Paper Insulation, Excellent Dielectric Strength' },
+      { zh: '配备高级有载调压器，实时电压调节', en: 'Advanced OLTC, Real-Time Voltage Regulation' },
+      { zh: '适应海拔 4000m、极端温度 -50°C 至 +55°C', en: 'Altitude 4000m, Temperature -50°C to +55°C' },
     ],
     detailedSpecTable: {
       columns: [
@@ -313,6 +318,7 @@ export const products: Product[] = [
     id: 'pole-mounted-transformer',
     icon: Radio,
     title: '杆式变压器',
+    titleEn: 'Pole-Mounted Transformer',
     shortDescription: '紧凑型单相/三相变压器，专为公用电杆架空线路安装设计。',
     fullDescription: '杆式变压器是为架空配电线路设计的紧凑型轻量化设备，广泛用于农村电气化、末端供电和公用配电网络，在用电点实现中压至低压的可靠降压。',
     standardSizes: ['5kVA', '10kVA', '25kVA', '50kVA', '75kVA', '100kVA', '167kVA'],
@@ -326,18 +332,18 @@ export const products: Product[] = [
       standards: 'IEC / ANSI',
     },
     features: [
-      '紧凑轻便',
-      '单相/三相可选',
-      '适合农村电气化',
-      '架空线路安装',
-      '耐候设计',
+      { zh: '紧凑轻便', en: 'Compact and Lightweight' },
+      { zh: '单相/三相可选', en: 'Single or Three Phase' },
+      { zh: '适合农村电气化', en: 'Rural Electrification' },
+      { zh: '架空线路安装', en: 'Overhead Installation' },
+      { zh: '耐候设计', en: 'Weather-Resistant Design' },
     ],
     productDescription: '专为架空配电网络设计，适用于公用事业公司及农村电气化项目，低维护、高可靠。',
     descriptionBullets: [
-      '全钢密封罐体，耐腐蚀涂料',
-      '冷轧取向硅钢芯，空载损耗降低 15–20%',
-      '效率 ≥98%，低噪音，过载能力强',
-      '可选完全自保护配置，集成断路器和避雷器',
+      { zh: '全钢密封罐体，耐腐蚀涂料', en: 'All-Steel Sealed Tank, Corrosion-Resistant Coating' },
+      { zh: '冷轧取向硅钢芯，空载损耗降低 15–20%', en: 'Cold-Rolled Oriented Steel Core, 15–20% Loss Reduction' },
+      { zh: '效率 ≥98%，低噪音，过载能力强', en: 'Efficiency ≥98%, Low Noise, High Overload Capacity' },
+      { zh: '可选完全自保护配置，集成断路器和避雷器', en: 'Optional Full Self-Protection, Integrated Circuit Breaker & Arrester' },
     ],
     detailedSpecTable: {
       columns: [
@@ -370,6 +376,7 @@ export const products: Product[] = [
     id: 'renewable-energy-transformer',
     icon: Sun,
     title: '可再生能源变压器',
+    titleEn: 'Renewable Energy Transformer',
     shortDescription: '专为光伏、风电及其他可再生能源应用定制的升压变压器。',
     fullDescription: '可再生能源变压器专为太阳能光伏电站、风电场和储能系统的苛刻需求特别设计，能够处理逆变器型发电特有的变负载特性和谐波含量，确保高效可靠的电力转换。',
     standardSizes: ['1000kVA', '1250kVA', '1600kVA', '2500kVA', '3150kVA'],
@@ -382,18 +389,18 @@ export const products: Product[] = [
       standards: 'IEC 60076 / IEEE C57',
     },
     features: [
-      '优化逆变器型发电',
-      '低谐波损耗',
-      '高过载能力',
-      '兼容光伏和风电',
-      '适用于储能系统',
+      { zh: '优化逆变器型发电', en: 'Inverter-Optimized Generation' },
+      { zh: '低谐波损耗', en: 'Low Harmonic Loss' },
+      { zh: '高过载能力', en: 'High Overload Capacity' },
+      { zh: '兼容光伏和风电', en: 'Solar and Wind Compatible' },
+      { zh: '适用于储能系统', en: 'Energy Storage Compatible' },
     ],
     productDescription: '适用于太阳能光伏、风力发电及储能系统，支持可变负载与高谐波环境，符合 IEC 60076。',
     descriptionBullets: [
-      '覆盖 400V–220kV，容量 1000–3150kVA',
-      '先进谐波抑制设计，适配逆变器输出',
-      '支持双向升压，适用于储能充放电循环',
-      '铁芯/冷却/绝缘全面定制，适应极端环境',
+      { zh: '覆盖 400V–220kV，容量 1000–3150kVA', en: 'Coverage 400V–220kV, Capacity 1000–3150kVA' },
+      { zh: '先进谐波抑制设计，适配逆变器输出', en: 'Advanced Harmonic Suppression, Inverter-Compatible' },
+      { zh: '支持双向升压，适用于储能充放电循环', en: 'Bidirectional Boost, Energy Storage Cycling' },
+      { zh: '铁芯/冷却/绝缘全面定制，适应极端环境', en: 'Fully Customizable, Extreme Environment Ready' },
     ],
     detailedSpecTable: {
       columns: [

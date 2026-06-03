@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { UnifiedHeader } from '@/components/unified-header'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -96,6 +97,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <UnifiedHeader />
         {children}
       </body>
     </html>
