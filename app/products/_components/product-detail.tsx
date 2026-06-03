@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, ArrowRight, MessageCircle, Mail, Droplets, Wind, Zap, Box, Radio, Sun, CheckCircle2 } from 'lucide-react'
+import { ArrowLeft, ArrowRight, MessageCircle, Mail, Droplets, Wind, Zap, Box, Radio, Sun, CircleCheck as CheckCircle2 } from 'lucide-react'
 import type { DetailedSpecTable } from '@/lib/products-data'
 
 interface ProductData {
@@ -66,13 +66,37 @@ export function ProductDetail({ product }: { product: ProductData }) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-10 items-start">
 
-            {/* Left – 40% image */}
-            <div className="w-full lg:w-[40%] shrink-0">
+            {/* Left – 40% image + description + selling points */}
+            <div className="w-full lg:w-[40%] shrink-0 space-y-6">
+              {/* Product Image */}
               <img
                 src={product.detailImage ?? product.image}
                 alt={product.title}
                 className="w-full rounded-lg object-cover aspect-[4/3]"
               />
+
+              {/* Product Description */}
+              {product.productDescription && (
+                <div>
+                  <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">产品简介</h3>
+                  <p className="text-sm text-foreground leading-relaxed">{product.productDescription}</p>
+                </div>
+              )}
+
+              {/* Selling Points / Description Bullets */}
+              {product.descriptionBullets && product.descriptionBullets.length > 0 && (
+                <div>
+                  <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">产品卖点</h3>
+                  <ul className="space-y-2">
+                    {product.descriptionBullets.map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-foreground leading-relaxed">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             {/* Right – 60% content */}
@@ -134,44 +158,22 @@ export function ProductDetail({ product }: { product: ProductData }) {
                   ))}
                 </ul>
               </div>
-            </div>
-          </div>
 
-          {/* ── Below both columns: checkmarks + buttons ── */}
-          <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row gap-8 items-start md:items-end justify-between">
-
-            {/* Green checkmark bullets */}
-            {product.descriptionBullets && product.descriptionBullets.length > 0 && (
-              <ul className="space-y-3 flex-1">
-                {product.descriptionBullets.map((bullet, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground leading-relaxed">{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {/* Three action buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-12 px-6">
-                <a href={`https://wa.me/8615905342475?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp 查询
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-semibold h-12 px-6">
-                <a href="mailto:sales@wenze-global.com">
-                  <Mail className="w-5 h-5 mr-2" />
-                  给我们发邮件
-                </a>
-              </Button>
-              <Button asChild size="lg" className="bg-green-500 hover:bg-green-600 text-white font-semibold h-12 px-6">
-                <a href={`https://wa.me/8615905342475?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp 询价
-                </a>
-              </Button>
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-12 px-6">
+                  <a href={`https://wa.me/8615905342475?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    WhatsApp 查询
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-semibold h-12 px-6">
+                  <a href="mailto:sales@wenze-global.com">
+                    <Mail className="w-5 h-5 mr-2" />
+                    给我们发邮件
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
