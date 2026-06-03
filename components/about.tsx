@@ -10,7 +10,7 @@ export function About() {
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
               <Building2 className="w-5 h-5 text-primary" />
             </div>
-            <span className="text-sm text-muted-foreground font-medium uppercase tracking-wide">About WENZE Power</span>
+            <span className="text-sm text-muted-foreground font-medium uppercase tracking-wide">About 文则电气</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
             Professional Transformer Manufacturing
@@ -21,7 +21,7 @@ export function About() {
         <div className="relative rounded-xl overflow-hidden mb-12 bg-black shadow-lg">
           <img
             src="/大门口.png"
-            alt="WENZE Power Manufacturing Facility Gate"
+            alt="文则电气 Manufacturing Facility Gate"
             className="w-full object-cover aspect-[21/9]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
@@ -32,10 +32,10 @@ export function About() {
           <div>
             <h3 className="text-2xl font-bold text-primary mb-4">Company Overview</h3>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Founded with a commitment to delivering reliable, high-quality power transformers, WENZE Power operates a modern manufacturing facility equipped with advanced production and testing [...]
+              山东文则电气有限公司秉承提供可靠、高品质电力变压器的理念而创立。公司拥有配备先进生产和测试设备的现代化制造工厂，专业团队将技术专长与丰富的实践经验相结合，生产出符合严格国际标准的变压器产品。
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              We manufacture transformer solutions across a wide voltage and capacity range, from compact distribution units to large industrial power transformers. Each unit undergoes comprehensi[...]
+              我们提供覆盖各类电压等级和容量范围的变压器解决方案，从紧凑型配电变压器到大型工业电力变压器，满足不同行业需求。每台设备均经过全面的出厂验收测试（FAT），确保性能可靠并符合 IEC 及 ANSI 标准。
             </p>
 
             {/* Key Stats */}
@@ -91,7 +91,7 @@ export function About() {
         <div className="relative rounded-xl overflow-hidden bg-black shadow-lg">
           <img
             src="/生产车间.jpg/production_workshop.jpg"
-            alt="WENZE Power Production Workshop"
+            alt="文则电气 Production Workshop"
             className="w-full object-cover aspect-[21/9]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
